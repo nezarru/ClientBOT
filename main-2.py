@@ -460,7 +460,7 @@ async def main():
     for acc in accounts:
         c = TelegramClient(acc["session"], acc["api_id"], acc["api_hash"])
         register_handlers(c)
-        await c.start(phone=acc["session"])
+        await c.start()
         me = await c.get_me()
         print(f"✅ Аккаунт {me.first_name} (@{me.username}) запущен")
         clients.append(c)
